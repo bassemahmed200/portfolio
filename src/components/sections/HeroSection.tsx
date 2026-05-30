@@ -69,6 +69,10 @@ export function HeroSection() {
             {personalInfo.title}
           </motion.p>
 
+          <motion.div variants={itemVariants} style={{ width: "150px", height: "150px", borderRadius: "50%", overflow: "hidden", border: "3px solid rgba(99,102,241,0.4)", boxShadow: "0 0 30px rgba(99,102,241,0.3)", margin: "1rem auto" }}>
+            <img src="/profile.jpg" alt="Bassem Ahmed" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+          </motion.div>
+
           <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center gap-4 pt-4 w-full sm:w-auto">
             <motion.a
               href="#projects"
@@ -90,19 +94,6 @@ export function HeroSection() {
               <MessageCircle size={18} />
               Get a Quote
             </motion.a>
-          </motion.div>
-
-          <motion.div variants={itemVariants} className="flex items-center gap-6 sm:gap-12 pt-12 sm:pt-16 flex-wrap justify-center">
-            {[
-              { value: "4+", label: "Years" },
-              { value: "47+", label: "Projects" },
-              { value: "27+", label: "Happy Clients" },
-            ].map((stat) => (
-              <div key={stat.label} className="text-center">
-                <div className="text-2xl sm:text-3xl md:text-4xl font-extrabold gradient-text">{stat.value}</div>
-                <div className="text-xs sm:text-sm text-[#64748b] mt-1">{stat.label}</div>
-              </div>
-            ))}
           </motion.div>
         </motion.div>
       </motion.div>
