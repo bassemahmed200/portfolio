@@ -25,7 +25,7 @@ export function ContactSection() {
             Need a website, web application, or SaaS platform built? I&apos;m available for freelance projects worldwide.
           </p>
 
-          <div style={{ display: "flex", justifyContent: "center", gap: "1.5rem", flexWrap: "wrap", marginBottom: "3rem" }}>
+          <div className="contact-cards" style={{ display: "flex", justifyContent: "center", gap: "1rem", flexWrap: "wrap", marginBottom: "2.5rem" }}>
             {[
               { icon: Mail, label: personalInfo.email, href: `mailto:${personalInfo.email}` },
               { icon: Phone, label: personalInfo.phone, href: `tel:${personalInfo.phone}` },
@@ -37,19 +37,19 @@ export function ContactSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 + i * 0.1, duration: 0.5 }}
-                className="glass-card"
-                style={{ padding: "1.25rem 2rem", display: "flex", alignItems: "center", gap: "0.75rem", textDecoration: "none", minWidth: "200px", justifyContent: "center" }}
+                className="glass-card contact-card"
+                style={{ padding: "1rem 1.5rem", display: "flex", alignItems: "center", gap: "0.75rem", textDecoration: "none", flex: "1 1 200px", justifyContent: "center" }}
               >
-                <item.icon size={18} style={{ color: "#818cf8" }} />
-                <span style={{ fontSize: "0.9rem", color: "#e2e8f0" }}>{item.label}</span>
+                <item.icon size={18} style={{ color: "#818cf8", flexShrink: 0 }} />
+                <span style={{ fontSize: "clamp(0.78rem, 2.5vw, 0.9rem)", color: "#e2e8f0", wordBreak: "break-all" }}>{item.label}</span>
               </motion.a>
             ))}
           </div>
 
           <motion.a
             href={`mailto:${personalInfo.email}`}
-            className="btn-primary"
-            style={{ fontSize: "1.1rem", padding: "16px 40px" }}
+            className="btn-primary w-full sm:w-auto"
+            style={{ fontSize: "1rem", padding: "14px 32px", justifyContent: "center" }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >

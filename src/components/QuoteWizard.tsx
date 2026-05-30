@@ -93,6 +93,18 @@ Sent from the project quote wizard.`;
   };
 
   return (
+    <>
+      <style>{`
+        @media (max-width: 480px) {
+          .wizard-header { padding: 1.25rem 1rem 1rem !important; }
+          .wizard-body { padding: 1.25rem 1rem !important; }
+          .wizard-footer { padding: 1rem 1rem 1.25rem !important; flex-wrap: wrap; gap: 0.75rem; justify-content: center !important; }
+          .wizard-footer button { width: 100%; justify-content: center; }
+          .wizard-features-grid { grid-template-columns: 1fr !important; }
+          .wizard-timeline-grid { grid-template-columns: 1fr !important; }
+          .wizard-type-grid { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
     <AnimatePresence>
       {isOpen && (
         <motion.div
@@ -133,7 +145,7 @@ Sent from the project quote wizard.`;
             onClick={(e) => e.stopPropagation()}
           >
             {/* Header */}
-            <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", padding: "1.75rem 2rem 1.25rem", borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
+            <div className="wizard-header" style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", padding: "1.75rem 2rem 1.25rem", borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
               <div>
                 <div style={{ fontSize: "0.72rem", fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", color: "#6366f1", marginBottom: "0.4rem" }}>Get a Free Quote</div>
                 <div style={{ fontSize: "1.4rem", fontWeight: 700, color: "#fff", fontFamily: "Outfit, sans-serif", lineHeight: 1.2 }}>What are you looking to build?</div>
@@ -171,12 +183,12 @@ Sent from the project quote wizard.`;
             </div>
 
             {/* Body */}
-            <div style={{ flex: 1, overflowY: "auto", padding: "1.75rem 2rem", scrollbarWidth: "thin", scrollbarColor: "rgba(99,102,241,0.3) transparent" }}>
+            <div className="wizard-body" style={{ flex: 1, overflowY: "auto", padding: "1.75rem 2rem", scrollbarWidth: "thin", scrollbarColor: "rgba(99,102,241,0.3) transparent" }}>
               <AnimatePresence mode="wait">
                 {/* Step 1: Project Type */}
                 {step === 1 && (
                   <motion.div key="step1" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} transition={{ duration: 0.25 }}>
-                    <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(160px, 1fr))", gap: "12px", marginTop: "1rem" }}>
+                    <div className="wizard-type-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(160px, 1fr))", gap: "12px", marginTop: "1rem" }}>
                       {projectTypes.map((type) => {
                         const Icon = type.icon;
                         const isSelected = projectType === type.id;
@@ -213,7 +225,7 @@ Sent from the project quote wizard.`;
                 {step === 2 && (
                   <motion.div key="step2" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} transition={{ duration: 0.25 }}>
                     <div style={{ fontSize: "0.85rem", color: "#64748b", marginBottom: "1rem" }}>Select all that apply — skip if unsure.</div>
-                    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px" }}>
+                    <div className="wizard-features-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px" }}>
                       {features.map((feat) => {
                         const isSelected = selectedFeatures.includes(feat.id);
                         return (
@@ -261,7 +273,7 @@ Sent from the project quote wizard.`;
                 {/* Step 3: Timeline */}
                 {step === 3 && (
                   <motion.div key="step3" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} transition={{ duration: 0.25 }}>
-                    <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "12px", marginTop: "1rem" }}>
+                    <div className="wizard-timeline-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "12px", marginTop: "1rem" }}>
                       {timelines.map((tl) => {
                         const isSelected = timeline === tl.id;
                         return (
@@ -413,7 +425,7 @@ Sent from the project quote wizard.`;
 
             {/* Footer */}
             {step < 5 && (
-              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "1.25rem 2rem 1.75rem", borderTop: "1px solid rgba(255,255,255,0.05)", flexShrink: 0 }}>
+              <div className="wizard-footer" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "1.25rem 2rem 1.75rem", borderTop: "1px solid rgba(255,255,255,0.05)", flexShrink: 0 }}>
                 {step > 1 ? (
                   <button
                     onClick={() => setStep(step - 1)}
@@ -469,5 +481,6 @@ Sent from the project quote wizard.`;
         </motion.div>
       )}
     </AnimatePresence>
+    </>
   );
 }

@@ -69,36 +69,38 @@ export function HeroSection() {
             {personalInfo.title}
           </motion.p>
 
-          <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center gap-4 pt-4">
+          <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center gap-4 pt-4 w-full sm:w-auto">
             <motion.a
               href="#projects"
-              className="btn-glass"
+              className="btn-glass w-full sm:w-auto"
               whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(59,130,246,0.4), inset 0 0 15px rgba(59,130,246,0.1)", borderColor: "rgba(59,130,246,0.3)", background: "rgba(59,130,246,0.15)" }}
               whileTap={{ scale: 0.95 }}
+              style={{ justifyContent: "center" }}
             >
               View My Work
               <ArrowRight size={18} />
             </motion.a>
             <motion.a
               href="#contact"
-              className="btn-primary"
+              className="btn-primary w-full sm:w-auto"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              style={{ justifyContent: "center" }}
             >
               <MessageCircle size={18} />
               Get a Quote
             </motion.a>
           </motion.div>
 
-          <motion.div variants={itemVariants} className="flex items-center gap-12 pt-16">
+          <motion.div variants={itemVariants} className="flex items-center gap-6 sm:gap-12 pt-12 sm:pt-16 flex-wrap justify-center">
             {[
               { value: "4+", label: "Years" },
               { value: "47+", label: "Projects" },
               { value: "27+", label: "Happy Clients" },
             ].map((stat) => (
               <div key={stat.label} className="text-center">
-                <div className="text-3xl md:text-4xl font-extrabold gradient-text">{stat.value}</div>
-                <div className="text-sm text-[#64748b] mt-1">{stat.label}</div>
+                <div className="text-2xl sm:text-3xl md:text-4xl font-extrabold gradient-text">{stat.value}</div>
+                <div className="text-xs sm:text-sm text-[#64748b] mt-1">{stat.label}</div>
               </div>
             ))}
           </motion.div>

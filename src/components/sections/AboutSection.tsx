@@ -29,7 +29,7 @@ export function AboutSection() {
             {aboutContent.paragraph2}
           </p>
 
-          <div style={{ display: "flex", justifyContent: "center", gap: "4rem", flexWrap: "wrap" }}>
+          <div className="about-stats" style={{ display: "flex", justifyContent: "center", gap: "clamp(2rem, 6vw, 4rem)", flexWrap: "wrap" }}>
             {aboutContent.stats.map((stat, i) => (
               <motion.div
                 key={stat.label}
@@ -39,13 +39,27 @@ export function AboutSection() {
                 transition={{ delay: 0.2 + i * 0.1, duration: 0.5 }}
                 className="text-center"
               >
-                <div className="gradient-text" style={{ fontSize: "3rem", fontWeight: 900, lineHeight: 1 }}>{stat.value}</div>
-                <div style={{ fontSize: "0.85rem", color: "#52525b", marginTop: "8px" }}>{stat.label}</div>
+                <div className="gradient-text about-stat-value" style={{ fontSize: "clamp(1.8rem, 6vw, 3rem)", fontWeight: 900, lineHeight: 1 }}>{stat.value}</div>
+                <div style={{ fontSize: "clamp(0.75rem, 2vw, 0.85rem)", color: "#52525b", marginTop: "8px" }}>{stat.label}</div>
               </motion.div>
             ))}
           </div>
         </motion.div>
       </div>
+
+      <style>{`
+        @media (max-width: 480px) {
+          .about-stats {
+            gap: 1.5rem !important;
+          }
+        }
+        @media (max-width: 768px) {
+          #about .container > div > p {
+            font-size: 0.92rem !important;
+            margin-bottom: 0.75rem !important;
+          }
+        }
+      `}</style>
     </section>
   );
 }

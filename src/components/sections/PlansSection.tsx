@@ -21,7 +21,7 @@ function PaymentSelector({ payment, selected, onChange }: { payment: (typeof pla
   return (
     <div style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.07)", borderRadius: "14px", padding: "1rem", display: "flex", flexDirection: "column", gap: "0.75rem" }}>
       <div style={{ fontSize: "0.72rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "#475569" }}>Choose payment plan:</div>
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "6px" }}>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "6px" }} className="payment-grid">
         {paymentOptions.map((opt) => (
           <button
             key={opt.key}
@@ -348,6 +348,8 @@ export function PlansSection({ onOpenWizard }: { onOpenWizard?: () => void }) {
           .plans-switcher { flex-direction: column; align-items: stretch; }
           .plans-switch-btn { min-width: unset; }
           .plans-switch-divider { justify-content: center; padding: 0; }
+          .payment-grid { grid-template-columns: 1fr !important; }
+          .plans-grid { grid-template-columns: 1fr !important; }
         }
       `}</style>
     </section>

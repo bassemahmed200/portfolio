@@ -64,7 +64,7 @@ export function Navbar({ onQuoteClick }: { onQuoteClick?: () => void }) {
           transition: "all 0.4s cubic-bezier(0.4,0,0.2,1)",
         }}>
           {/* Desktop Nav */}
-          <div style={{ display: "flex", alignItems: "center", gap: "2px" }} className="hidden lg:flex">
+          <div style={{ alignItems: "center", gap: "2px" }} className="hidden lg:flex">
             {navLinks.map((link) => {
               const isActive = activeSection === link.href.replace("#", "");
               return (
@@ -150,9 +150,8 @@ export function Navbar({ onQuoteClick }: { onQuoteClick?: () => void }) {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileOpen(!isMobileOpen)}
-            className="lg:hidden"
+            className="flex lg:hidden"
             style={{
-              display: "flex",
               alignItems: "center",
               justifyContent: "center",
               width: "44px",

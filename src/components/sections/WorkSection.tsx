@@ -32,6 +32,7 @@ export function WorkSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.9, ease: "easeOut" }}
+                className="work-grid-item"
                 style={{
                   display: "grid",
                   gridTemplateColumns: "1fr 1fr",
@@ -103,7 +104,22 @@ export function WorkSection() {
 
       <style>{`
         @media (max-width: 768px) {
-          #projects .container > div:not(.section-label):not(.section-heading) { grid-template-columns: 1fr !important; direction: ltr !important; }
+          .work-grid-item {
+            grid-template-columns: 1fr !important;
+            direction: ltr !important;
+            gap: 1.5rem !important;
+          }
+          .work-grid-item .glass-card {
+            height: 260px !important;
+          }
+          .work-grid-item > div:last-child {
+            text-align: center !important;
+          }
+        }
+        @media (max-width: 480px) {
+          .work-grid-item .glass-card {
+            height: 220px !important;
+          }
         }
       `}</style>
     </section>
