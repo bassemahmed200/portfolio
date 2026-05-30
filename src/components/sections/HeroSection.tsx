@@ -42,7 +42,7 @@ export function HeroSection() {
   };
 
   return (
-    <section ref={containerRef} id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section ref={containerRef} id="home" className="relative min-h-screen flex items-end justify-center overflow-hidden" style={{ paddingBottom: "8vh", paddingTop: "15vh" }}>
       <Suspense fallback={null}>
         <ThreeScene />
       </Suspense>
