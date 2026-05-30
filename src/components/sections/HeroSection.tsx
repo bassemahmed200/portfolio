@@ -69,7 +69,7 @@ export function HeroSection() {
             {personalInfo.title}
           </motion.p>
 
-          <motion.div variants={itemVariants} style={{ width: "250px", height: "250px", borderRadius: "50%", overflow: "hidden", border: "3px solid rgba(99,102,241,0.4)", boxShadow: "0 0 30px rgba(99,102,241,0.3)", margin: "1rem auto" }}>
+          <motion.div variants={itemVariants} style={{ width: "500px", height: "500px", borderRadius: "50%", overflow: "hidden", border: "3px solid rgba(99,102,241,0.4)", boxShadow: "0 0 30px rgba(99,102,241,0.3)", margin: "1rem auto" }}>
             <img src="/profile.png" alt="Bassem Ahmed" style={{ width: "100%", height: "100%", objectFit: "contain" }} />
           </motion.div>
 
