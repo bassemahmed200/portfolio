@@ -70,7 +70,7 @@ export function HeroSection() {
           </motion.p>
 
           <motion.div variants={itemVariants} style={{ width: "150px", height: "150px", borderRadius: "50%", overflow: "hidden", border: "3px solid rgba(99,102,241,0.4)", boxShadow: "0 0 30px rgba(99,102,241,0.3)", margin: "1rem auto" }}>
-            <img src="/profile.jpg" alt="Bassem Ahmed" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+            <img src="/profile.png" alt="Bassem Ahmed" style={{ width: "100%", height: "100%", objectFit: "contain" }} />
           </motion.div>
 
           <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center gap-4 pt-4 w-full sm:w-auto">
