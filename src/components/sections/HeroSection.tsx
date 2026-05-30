@@ -51,7 +51,7 @@ export function HeroSection() {
       <div className="liquid-blob liquid-blob--light w-[400px] h-[400px] top-1/2 -right-20" />
 
       <motion.div style={{ y, opacity }} className="relative z-10 container text-center">
-        <motion.div variants={containerVariants} initial="hidden" animate="visible" className="flex flex-col items-center gap-6">
+        <motion.div variants={containerVariants} initial="hidden" animate="visible" className="flex flex-col items-center gap-4">
           <motion.div variants={itemVariants} className="flex items-center gap-3 rounded-full border border-green-500/20 bg-green-500/10 px-5 py-2">
             <span className="relative flex h-2.5 w-2.5">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75" />
@@ -60,20 +60,20 @@ export function HeroSection() {
             <span className="text-sm font-medium text-green-400">{personalInfo.availability}</span>
           </motion.div>
 
-          <motion.h1 variants={itemVariants} className="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tight">
+          <motion.h1 variants={itemVariants} className="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tight mt-4">
             Hi, I&apos;m{" "}
             <span style={{ background: "linear-gradient(135deg, #818cf8, #a855f7, #ec4899)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text", filter: "drop-shadow(0 0 25px rgba(99,102,241,0.5))" }}>{personalInfo.name.split(" ")[0]}</span>
           </motion.h1>
 
-          <motion.p variants={itemVariants} className="text-2xl md:text-3xl font-light text-[#b0b8c8]">
+          <motion.p variants={itemVariants} className="text-xl md:text-2xl font-light text-[#b0b8c8]">
             {personalInfo.title}
           </motion.p>
 
-          <motion.div variants={itemVariants} style={{ width: "500px", height: "500px", borderRadius: "50%", overflow: "hidden", margin: "1rem auto" }}>
+          <motion.div variants={itemVariants} style={{ width: "300px", height: "300px", borderRadius: "50%", overflow: "hidden", margin: "0.5rem auto" }}>
             <img src="/profile.png" alt="Bassem Ahmed" style={{ width: "100%", height: "100%", objectFit: "contain" }} />
           </motion.div>
 
-          <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center gap-4 pt-4 w-full sm:w-auto">
+          <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center gap-4 pt-2 w-full sm:w-auto">
             <motion.a
               href="#projects"
               className="btn-glass w-full sm:w-auto"
