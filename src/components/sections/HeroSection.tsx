@@ -28,16 +28,16 @@ export function HeroSection() {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.15, delayChildren: 0.3 },
+      transition: { staggerChildren: 0.12, delayChildren: 0.2 },
     },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 40 },
+    hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] },
+      transition: { duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] },
     },
   };
 
@@ -50,22 +50,22 @@ export function HeroSection() {
       <div className="liquid-blob liquid-blob--blue w-[600px] h-[600px] -top-40 -left-40" />
       <div className="liquid-blob liquid-blob--light w-[400px] h-[400px] top-1/2 -right-20" />
 
-      <motion.div style={{ y, opacity }} className="relative z-10 container text-center">
-        <motion.div variants={containerVariants} initial="hidden" animate="visible" className="flex flex-col items-center gap-4">
-          <motion.h1 variants={itemVariants} className="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tight mt-4">
+      <motion.div style={{ y, opacity }} className="relative z-10 w-full px-6">
+        <motion.div variants={containerVariants} initial="hidden" animate="visible" className="flex flex-col items-center text-center" style={{ maxWidth: "900px", margin: "0 auto" }}>
+          <motion.h1 variants={itemVariants} className="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tight">
             Hi, I&apos;m{" "}
             <span style={{ background: "linear-gradient(135deg, #818cf8, #a855f7, #ec4899)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text", filter: "drop-shadow(0 0 25px rgba(99,102,241,0.5))" }}>{personalInfo.name.split(" ")[0]}</span>
           </motion.h1>
 
-          <motion.p variants={itemVariants} className="text-xl md:text-2xl font-light text-[#b0b8c8]">
+          <motion.p variants={itemVariants} className="text-xl md:text-2xl font-light text-[#b0b8c8] mt-4">
             {personalInfo.title}
           </motion.p>
 
-          <motion.div variants={itemVariants} style={{ width: "300px", height: "300px", borderRadius: "50%", overflow: "hidden", margin: "0.5rem auto" }}>
-            <img src="/profile.png" alt="Bassem Ahmed" style={{ width: "100%", height: "100%", objectFit: "contain" }} />
+          <motion.div variants={itemVariants} className="my-8" style={{ width: "250px", height: "250px", borderRadius: "50%", overflow: "hidden", border: "3px solid rgba(99,102,241,0.3)", boxShadow: "0 0 40px rgba(99,102,241,0.2)" }}>
+            <img src="/profile.png" alt="Bassem Ahmed" style={{ width: "100%", height: "100%", objectFit: "contain", background: "transparent" }} />
           </motion.div>
 
-          <motion.div variants={itemVariants} className="flex items-center gap-3 rounded-full border border-green-500/20 bg-green-500/10 px-5 py-2">
+          <motion.div variants={itemVariants} className="flex items-center gap-3 rounded-full border border-green-500/20 bg-green-500/10 px-5 py-2 mb-6">
             <span className="relative flex h-2.5 w-2.5">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75" />
               <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-green-400" />
@@ -73,7 +73,7 @@ export function HeroSection() {
             <span className="text-sm font-medium text-green-400">{personalInfo.availability}</span>
           </motion.div>
 
-          <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center gap-4 pt-2 w-full sm:w-auto">
+          <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center gap-4">
             <motion.a
               href="#projects"
               className="btn-glass w-full sm:w-auto"
